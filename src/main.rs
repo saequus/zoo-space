@@ -2,11 +2,21 @@ use crate::food::food::ToFeedAnimals;
 mod food;
 mod manage;
 use std::env;
-
+mod designators;
 
 fn main () {
     let args: Vec<String> = env::args().collect(); 
     println!("Start of visit to Zoo Space");
+    
+
+    create_function!(temp);
+    print_result!(1u32 + 1);
+
+    show_block!({
+        let x = 1u32;
+
+        x * x + 2 - 1
+    });
 
     let mut animal_name = String::from("[Animal name not provided]");
     if args.len() > 1 {
