@@ -5,25 +5,16 @@ use std::env;
 
 
 fn main () {
-    manage::index::vector_test(); 
     let args: Vec<String> = env::args().collect(); 
-    if args.len() > 0 {
-        let command = &args[1];
-        let param1 = &args[2];
-
-        let another_an = food::food::Animal {
-            animal_type: food::food::AnimalType::Frog,
-            name: String::from(param1),
-        };
-
-        manage::index::show_test();
-        println!("Another animal name: {}", another_an.show_name());
-    };
     println!("Start of visit to Zoo Space");
 
+    let mut animal_name = String::from("[Animal name not provided]");
+    if args.len() > 1 {
+        animal_name = String::from(&args[1]); 
+    }
     let example_an  = food::food::Animal {
         animal_type: food::food::AnimalType::Horse,
-        name: String::from("Elliot"),
+        name: animal_name,
     };
 
     println!("Animal name: {}", example_an.show_name());
