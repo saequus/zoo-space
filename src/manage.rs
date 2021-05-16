@@ -1,19 +1,28 @@
 pub mod index {
-  
-    #[allow(dead_code)]
+    use std::env;
+
+    pub fn run() {
+        show_test();
+        merge_arrays_and_print_result();
+        current_env_vars();
+    }
+
     pub fn show_test() {
         println!("This is show_test from manage::index mod");
     }
     
-    #[allow(dead_code)]
-    pub fn vector_test() {
+    pub fn merge_arrays_and_print_result() {
         let x = vec![1, 2, 10, 33];
         let y = vec![100, 2, 11];
         let z = merge_arrays(x, y);
         print_array(z);
     }
+    
+    pub fn current_env_vars() { 
+        let cargo = env::var("CARGO").unwrap();
+        println!("CARGO: {}", cargo); 
+    }
 
-    #[allow(dead_code)]
     pub fn merge_arrays(v: Vec<i32>, m: Vec<i32>) -> Vec<i32> {
         let mut r: Vec<i32> = Vec::new();
         let shortest_len;

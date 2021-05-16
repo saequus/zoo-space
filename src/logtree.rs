@@ -3,6 +3,13 @@ pub mod index {
     use std::io::Write;
     use std::path::Path;
 
+    pub fn run() {
+        write_log_to_file(
+            "[string] log from logtree::index::run to logs/mainlog file\n", 
+            "mainlog"
+        ); 
+    }
+
     pub fn write_log_to_file(log: &str, file_name: &str) {
         let mut path = String::from("logs/");
         path.push_str(file_name);

@@ -1,4 +1,7 @@
-pub mod food { 
+pub mod index { 
+    use crate::animal::index::Animal;
+    use crate::animal::index::AnimalType;
+
     pub trait ToFeedAnimals {
         fn food_for_animal(animal: AnimalType) -> AnimalFoodType; 
         fn show_name(&self) -> String; 
@@ -19,24 +22,12 @@ pub mod food {
         }
     }
 
-    pub struct Animal {
-        pub animal_type: AnimalType,
-        pub name: String,
-    }
-
     #[allow(dead_code)]
     enum AnimalFoodType {
         Grass,
         Banana,
         Meat,
         Insects
-    }
-
-    #[allow(dead_code)]
-    pub enum AnimalType {
-        Horse,
-        Lion,
-        Frog
     }
 
 }
