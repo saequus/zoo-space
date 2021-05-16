@@ -3,20 +3,17 @@ mod food;
 mod manage;
 use std::env;
 mod designators;
+mod logtree;
+
 
 fn main () {
     let args: Vec<String> = env::args().collect(); 
     println!("Start of visit to Zoo Space");
-    
+        
+    logtree::index::write_log_to_file("Some string\n", "mainlog");
 
-    create_function!(temp);
-    print_result!(1u32 + 1);
-
-    show_block!({
-        let x = 1u32;
-
-        x * x + 2 - 1
-    });
+    let cargo = env::var("CARGO").unwrap();
+    println!("CARGO: {}", cargo);
 
     let mut animal_name = String::from("[Animal name not provided]");
     if args.len() > 1 {

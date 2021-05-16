@@ -23,6 +23,17 @@ pub mod index {
         };
     }
 
+    #[macro_export]
+    macro_rules! wrapper {
+        ($func_name:ident) => {
+            println!("[WRAPPED] top");
+            fn $func_name() {
+                println!("[INNER] part: {:?} is called", stringify!($func_name));
+            }
+            println!("[WRAPPED] bottom");
+        };
+    }
+
 }
 
 

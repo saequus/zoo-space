@@ -1,5 +1,5 @@
 [package]
-name = "zoo-space"
+name = "zoospace"
 version = "0.1.0"
 authors = ["saequus <slava@spetsyian.com>"]
 edition = "2018"
